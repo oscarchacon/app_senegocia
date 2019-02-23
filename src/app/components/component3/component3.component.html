@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="card-header">
+    Componente3
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <tr>
+        <th>User Id</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Options</th>
+      </tr>
+      <ng-container *ngIf="data.length > 0; else NoData">
+        <ng-container *ngFor="let oneData of data">
+          <tr>
+            <td>{{oneData.userId}}</td>
+            <td>{{oneData.id}}</td>
+            <td>{{oneData.title}}</td>
+            <td>{{oneData.body}}</td>
+            <td>
+              <div class="btn-group-vertical">
+                <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Delete</button>
+                <button class="btn btn-primary btn-sm"><i class="fa fa-edit"> Edit</i></button>
+              </div>
+            </td>
+          </tr>
+        </ng-container>
+      </ng-container>
+      <ng-template #NoData>
+        <tr>
+          <td colspan=5>
+            No Data
+          </td>
+        </tr>
+      </ng-template>
+    </table>
+  </div>
+</div>
