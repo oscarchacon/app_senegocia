@@ -17,4 +17,8 @@ export class Service1Service extends BaseServiceService{
     return this.get('posts').pipe(map(res => res));
   }
 
+  addNewPost(Post: any): Observable<any> {
+    return this.post('posts', Post).pipe(map(res => res));
+  }
+
 }

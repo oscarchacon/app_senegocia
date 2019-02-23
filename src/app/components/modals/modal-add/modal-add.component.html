@@ -1,3 +1,44 @@
-<p>
-  modal-add works!
-</p>
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Add Data</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <label>User</label>
+        <select class="form-control" [(ngModel)]="newPost.userId">
+          <ng-container *ngFor="let oneDataUserId of listUserId">
+            <option value={{oneDataUserId}}>{{oneDataUserId}}</option>
+          </ng-container>
+        </select>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label>Title</label>
+        <textarea rows="2" class="form-control" [(ngModel)]="newPost.title"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <label>Body</label>
+        <textarea rows="3" class="form-control" [(ngModel)]="newPost.body"></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+    <div class="row">
+      <div class="col">
+        <div class="pull-right">
+          <button class="btn btn-primary" (click)="saveData(newPost)"><i class="fa fa-save"></i> Save</button>
+          <button class="btn btn-default" (click)="bsModalRef.hide()"><i class="fa fa-times"></i> Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>

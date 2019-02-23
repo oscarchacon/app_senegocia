@@ -14,6 +14,7 @@ export class Component3Component implements OnInit {
   constructor(private service1: Service1Service) { }
 
   ngOnInit() {
+
   }
 
 }
