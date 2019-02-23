@@ -11,7 +11,9 @@ import { Component3Component } from './components/component3/component3.componen
 import { HttpClientModule } from '@angular/common/http';
 import { Service1Service } from './services/service1.service';
 import { ModalAddComponent } from './components/modals/modal-add/modal-add.component';
-import { BsModalService } from 'ngx-bootstrap';
+import { BsModalService, ModalModule } from 'ngx-bootstrap';
+import { ModalConfirmComponent } from './components/modals/modal-confirm/modal-confirm.component';
+import { ModalEditComponent } from './components/modals/modal-edit/modal-edit.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { BsModalService } from 'ngx-bootstrap';
     Component3Component,
     ModalAddComponent,
     ModalAddComponent,
+    ModalConfirmComponent,
+    ModalEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,13 +32,16 @@ import { BsModalService } from 'ngx-bootstrap';
     HttpClientModule,
     AppRoutingModule,
     TooltipModule.forRoot(),
+    ModalModule,
   ],
   providers: [
     Service1Service,
     BsModalService,
   ],
   entryComponents:[
-    ModalAddComponent
+    ModalAddComponent,
+    ModalConfirmComponent,
+    ModalEditComponent,
   ],
   bootstrap: [AppComponent]
 })

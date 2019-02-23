@@ -14,11 +14,11 @@ export class Component1Component implements OnInit {
   constructor(private service1: Service1Service) { }
 
   ngOnInit() {
-    this.getAllPost();
+    this.obtenerTodosPost();
   }
 
-  getAllPost(): void {
-    this.service1.getPosts()
+  obtenerTodosPost(): void {
+    this.service1.obtenerPosts()
       .subscribe(data => {
         this.posts = data;
       });

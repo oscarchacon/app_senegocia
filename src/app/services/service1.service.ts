@@ -13,8 +13,20 @@ export class Service1Service extends BaseServiceService{
     super(http);
   }
 
-  getPosts(): Observable<any[]> {
+  obtenerPosts(): Observable<any[]> {
     return this.get('posts').pipe(map(res => res));
+  }
+
+  agregarNuevoPost(Post: any): Observable<any> {
+    return this.post('posts', Post).pipe(map(res => res));
+  }
+
+  eliminarPost(IdPost: number): Observable<any> {
+    return this.delete(`posts/${IdPost}`).pipe(map(res => res));
+  }
+
+  editarPost(Post: any): Observable<any> {
+    return this.put(`posts/${Post.id}`, Post).pipe(map(res => res));
   }
 
 }

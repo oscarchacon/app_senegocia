@@ -1,0 +1,50 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Editar Post</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="cancelar()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <label>Id</label>
+        <span class="form-control" disabled>{{Post.id}}</span>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label>Usuario</label>
+        <select class="form-control" [(ngModel)]="Post.userId">
+          <ng-container *ngFor="let oneDataUserId of listaUsersId">
+            <option value={{oneDataUserId}}>{{oneDataUserId}}</option>
+          </ng-container>
+        </select>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label>Titulo</label>
+        <textarea rows="2" class="form-control" [(ngModel)]="Post.title"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <label>Cuerpo</label>
+        <textarea rows="3" class="form-control" [(ngModel)]="Post.body"></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <div class="row">
+    <div class="col">
+      <div class="pull-right">
+        <button class="btn btn-primary" (click)="editarData(Post)"><i class="fa fa-save"></i> Guardar</button>
+        <button class="btn btn-default" (click)="cancelar()"><i class="fa fa-times"></i> Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -3,15 +3,15 @@
     Componente3
   </div>
   <div class="card-body">
-    <table class="table">
+    <table class="table table-striped">
       <tr>
         <th>User Id</th>
         <th>Id</th>
-        <th>Title</th>
-        <th>Body</th>
-        <th>Options</th>
+        <th>Titulo</th>
+        <th>Cuerpo</th>
+        <th>Opciones</th>
       </tr>
-      <ng-container *ngIf="data.length > 0; else NoData">
+      <ng-container *ngIf="data.length > 0; else SinDatos">
         <ng-container *ngFor="let oneData of data">
           <tr>
             <td>{{oneData.userId}}</td>
@@ -20,17 +20,17 @@
             <td>{{oneData.body}}</td>
             <td>
               <div class="btn-group-vertical">
-                <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Delete</button>
-                <button class="btn btn-primary btn-sm"><i class="fa fa-edit"> Edit</i></button>
+                <button class="btn btn-danger btn-sm" (click)="preguntaeEliminaPost(oneData)"><i class="fa fa-trash"></i> Eliminar</button>
+                <button class="btn btn-primary btn-sm" (click)="abrirModalEditarPost(oneData)"><i class="fa fa-edit"></i> Editar</button>
               </div>
             </td>
           </tr>
         </ng-container>
       </ng-container>
-      <ng-template #NoData>
+      <ng-template #SinDatos>
         <tr>
           <td colspan=5>
-            No Data
+            Sin Datos
           </td>
         </tr>
       </ng-template>
