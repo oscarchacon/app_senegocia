@@ -2,6 +2,26 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
 
+Llegar y usar, inicia el siguiente comando `npm install` y luego `ng serve`
+
+Usar angular/cli 7.3.3 y nodejs 11.9.0, junto con npm 6.8
+
+## Paquetes Utilizados
+
+`bootstrap 4` -> `npm install --save bootstrap`  
+`font awesome` -> `npm install --save font-awesome`  
+`ngx-bootstrap` -> `npm install --save ngx-bootstrap` 
+
+Agregar, si faltan, las siguientes lineas en `styles` del archivo `angular.json`  
+`"node_modules/bootstrap/dist/css/bootstrap.min.css"`    
+`"node_modules/font-awesome/css/font-awesome.css"`
+
+## Consideraciones
+
+El proyecto tiene dentro de la carpeta `components`, las siguiente carpetas que lo conforman `component1`, `component2`, `component3`, `modals`
+Además tiene `classes` : las clases utilizadas, segun el modelo de datos que venga del servicio web  
+`services`: servicios utilizados  
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
