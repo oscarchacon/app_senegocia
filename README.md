@@ -16,6 +16,7 @@ Agregar, si faltan, las siguientes lineas en `styles` del archivo `angular.json`
 `"node_modules/bootstrap/dist/css/bootstrap.min.css"`    
 `"node_modules/font-awesome/css/font-awesome.css"`
 
+
 ## Consideraciones
 
 El proyecto tiene dentro de la carpeta `components`, las siguiente carpetas que lo conforman `component1`, `component2`, `component3`, `modals`
